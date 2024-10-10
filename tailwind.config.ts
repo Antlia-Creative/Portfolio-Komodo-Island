@@ -8,9 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'komodo-park': "url('/komodo-national-park.png')"
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'black-olive': '#3d3c3c',
+        'bright-turquoise': '#17d4de',
+        'bright-gray': '#eceaea',
+        'silver-foil': '#b0aeae'
       },
     },
   },
