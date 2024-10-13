@@ -42,6 +42,11 @@ const inter = localFont({
   variable: "--font-inter",
   weight: "400",
 });
+const interMedium = localFont({
+  src: "./fonts/inter/inter-medium.ttf",
+  variable: "--font-inter-medium",
+  weight: "500",
+});
 const interSemiBold = localFont({
   src: "./fonts/inter/inter-semi-bold.ttf",
   variable: "--font-inter-semi-bold",
@@ -66,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${segoeUILight.variable} ${segoeUILightItalic.variable} ${segoeUI.variable} ${segoeUI.variable} ${segoeUIItalic.variable} ${segoeUIBold.variable} ${segoeUIBoldItalic.variable} ${caveatBold.variable} ${inter.variable} ${interSemiBold.variable} ${interExtraBold.variable} antialiased`}
+        className={`${segoeUILight.variable} ${segoeUILightItalic.variable} ${segoeUI.variable} ${segoeUI.variable} ${segoeUIItalic.variable} ${segoeUIBold.variable} ${segoeUIBoldItalic.variable} ${caveatBold.variable} ${inter.variable} ${interMedium.variable} ${interSemiBold.variable} ${interExtraBold.variable} antialiased`}
       >
         {children}
       </body>

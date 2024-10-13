@@ -15,7 +15,9 @@ const config: Config = {
         'black-olive': '#3d3c3c',
         'bright-turquoise': '#17d4de',
         'bright-gray': '#eceaea',
-        'silver-foil': '#b0aeae'
+        'silver-foil': '#b0aeae',
+        'dandelion': '#eee42d',
+        'viridian-green': '#069299'
       },
     },
   },
