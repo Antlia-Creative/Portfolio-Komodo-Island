@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${segoeUILight.variable} ${segoeUILightItalic.variable} ${segoeUI.variable} ${segoeUI.variable} ${segoeUIItalic.variable} ${segoeUIBold.variable} ${segoeUIBoldItalic.variable} ${caveatBold.variable} ${inter.variable} ${interMedium.variable} ${interSemiBold.variable} ${interExtraBold.variable} antialiased`}
       >

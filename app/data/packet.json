@@ -1,0 +1,23 @@
+[
+  {
+    "img_src": "/packet-1.png",
+    "tag1": "3 Days, 2 Nights",
+    "tag2": "$530/Night",
+    "title": "Life On Boat",
+    "description": "Feel the experience life on boat while you see and explore the gorgeous of Komodo National Park."
+  },
+  {
+    "img_src": "/packet-2.png",
+    "tag1": "5 Days, 4 Nights",
+    "tag2": "$470/Night",
+    "title": "Discover The Stunning Beaches",
+    "description": "Find out the tunning beaches that you never imagine before."
+  },
+  {
+    "img_src": "/packet-3.png",
+    "tag1": "7 Days, 6 Nights",
+    "tag2": "$321/Night",
+    "title": "Full Capture The Nature",
+    "description": "Let's see full version of paradise at Komodo National Park with the beauty of nature and culture."
+  }
+]

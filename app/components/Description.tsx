@@ -1,6 +1,9 @@
 export default function Description() {
   return (
-    <div className="rounded-3xl	flex items-center gap-x-20 bg-white py-44 px-14 mx-12">
+    <div
+      id="about"
+      className="rounded-3xl	flex items-center gap-x-20 bg-white py-44 px-14 mx-12"
+    >
       <div className="flex-1 flex gap-10">
         <div className="space-y-10">
           <img src="/komodo-park-1.png" className="rounded-3xl" />
@@ -21,9 +24,9 @@ export default function Description() {
           beauty and adventure of Komodo National Park. Our platform offers
           tailored travel insights, guided experiences, and essential
           information to help you explore this unique UNESCO World Heritage
-          site. Whether you&apos;re here to witness the iconic Komodo dragons or to
-          dive into crystal-clear waters, we make your journey seamless, safe,
-          and unforgettable.
+          site. Whether you&apos;re here to witness the iconic Komodo dragons or
+          to dive into crystal-clear waters, we make your journey seamless,
+          safe, and unforgettable.
         </p>
       </div>
     </div>

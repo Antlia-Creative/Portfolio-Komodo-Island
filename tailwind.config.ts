@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'komodo-park': "url('/komodo-national-park.png')"
+        'komodo-park': "url('/komodo-national-park.png')",
+        'komodo-park-orig': "url('/komodo-national-park-orig.png')"
       },
       colors: {
         'black-olive': '#3d3c3c',
