@@ -5,26 +5,49 @@ import StarIcon from "./icons/Star";
 import data from "../data/testimony.json";
 
 export default function Testimony() {
-  const [index, setIndex] = useState([0, 1, 2]);
-
-  function back() {
-    setIndex((state) => {
-      return [
-        getIndex("back", state[0], 0, data.length - 1),
-        getIndex("back", state[1], 0, data.length - 1),
-        getIndex("back", state[2], 0, data.length - 1),
-      ];
-    });
-  }
+  const [index, setIndex] = useState([0, 1, 2, 3, 4]);
+  const [isAnimateTo, setIsAnimateTo] = useState<"back" | "next" | "no">("no");
 
   function next() {
-    setIndex((state) => {
-      return [
-        getIndex("next", state[0], 0, data.length - 1),
-        getIndex("next", state[1], 0, data.length - 1),
-        getIndex("next", state[2], 0, data.length - 1),
-      ];
-    });
+    if (isAnimateTo === "no") {
+      setIsAnimateTo("next");
+    }
+  }
+
+  function back() {
+    if (isAnimateTo === "no") {
+      setIsAnimateTo("back");
+    }
+  }
+
+  function onTransitionEnd() {
+    const animateTo = isAnimateTo;
+    switch (animateTo) {
+      case "back":
+        setIndex((state) => {
+          return [
+            getIndex("back", state[0], 0, data.length - 1),
+            getIndex("back", state[1], 0, data.length - 1),
+            getIndex("back", state[2], 0, data.length - 1),
+            getIndex("back", state[3], 0, data.length - 1),
+            getIndex("back", state[4], 0, data.length - 1),
+          ];
+        });
+        break;
+      case "next":
+        setIndex((state) => {
+          return [
+            getIndex("next", state[0], 0, data.length - 1),
+            getIndex("next", state[1], 0, data.length - 1),
+            getIndex("next", state[2], 0, data.length - 1),
+            getIndex("next", state[3], 0, data.length - 1),
+            getIndex("next", state[4], 0, data.length - 1),
+          ];
+        });
+        break;
+      case "no":
+    }
+    setIsAnimateTo("no");
   }
 
   function getIndex(
@@ -61,7 +84,16 @@ export default function Testimony() {
         </p>
       </div>
       <div className="mt-16 overflow-hidden">
-        <div className="flex gap-x-4 px-10 w-[120%]">
+        <div
+          onTransitionEnd={onTransitionEnd}
+          className={`flex w-[200%] px-4 ${
+            isAnimateTo === "no"
+              ? "-translate-x-[19.75%]"
+              : isAnimateTo === "next"
+              ? "transition-transform duration-300 -translate-x-[39.5%]"
+              : "transition-transform duration-300 -translate-x-0"
+          }`}
+        >
           <Card
             imgSrc={data[index[0]].img_src}
             peopleName={data[index[0]].people_name}
@@ -86,6 +118,22 @@ export default function Testimony() {
             description={data[index[2]].description}
             stars={data[index[2]].stars}
           />
+          <Card
+            imgSrc={data[index[3]].img_src}
+            peopleName={data[index[3]].people_name}
+            peopleLocation={data[index[3]].people_location}
+            shortDescription={data[index[3]].short_description}
+            description={data[index[3]].description}
+            stars={data[index[3]].stars}
+          />
+          <Card
+            imgSrc={data[index[4]].img_src}
+            peopleName={data[index[4]].people_name}
+            peopleLocation={data[index[4]].people_location}
+            shortDescription={data[index[4]].short_description}
+            description={data[index[4]].description}
+            stars={data[index[4]].stars}
+          />
         </div>
       </div>
       <div className="mt-16 flex justify-center gap-x-4 items-center">
@@ -100,7 +148,7 @@ export default function Testimony() {
           <div
             key={idx}
             className={`w-3 h-3 rounded-full ${
-              idx === index[1] ? "bg-bright-turquoise" : "bg-silver-foil"
+              idx === index[2] ? "bg-bright-turquoise" : "bg-silver-foil"
             }`}
           />
         ))}
@@ -127,32 +175,34 @@ interface CardProps {
 
 function Card(props: CardProps) {
   return (
-    <div className="flex-1 flex flex-col rounded-3xl p-8 bg-white">
-      <div className="flex gap-x-6">
-        <div>
-          <img src={props.imgSrc} className="w-16 h-16 rounded-full" />
+    <div className="flex-1 px-4">
+      <div className="h-full flex flex-col rounded-3xl p-8 bg-white">
+        <div className="flex gap-x-6">
+          <div>
+            <img src={props.imgSrc} className="w-16 h-16 rounded-full" />
+          </div>
+          <div>
+            <p className="font-[family-name:var(--font-inter-semi-bold)]">
+              {props.peopleName}
+            </p>
+            <p className="font-[family-name:var(--font-inter)] italic">
+              {props.peopleLocation}
+            </p>
+          </div>
         </div>
-        <div>
-          <p className="font-[family-name:var(--font-inter-semi-bold)]">
-            {props.peopleName}
-          </p>
-          <p className="font-[family-name:var(--font-inter)] italic">
-            {props.peopleLocation}
-          </p>
+        <div className="flex-1 mt-6">
+          <span className="font-[family-name:var(--font-inter-semi-bold)]">
+            {props.shortDescription}
+          </span>{" "}
+          <span className="font-[family-name:var(--font-inter)]">
+            {props.description}
+          </span>
         </div>
-      </div>
-      <div className="flex-1 mt-6">
-        <span className="font-[family-name:var(--font-inter-semi-bold)]">
-          {props.shortDescription}
-        </span>{" "}
-        <span className="font-[family-name:var(--font-inter)]">
-          {props.description}
-        </span>
-      </div>
-      <div className="mt-6 flex gap-x-2">
-        {[...Array(props.stars).keys()].map((i) => {
-          return <StarIcon key={i} className="text-dandelion w-8 h-8" />;
-        })}
+        <div className="mt-6 flex gap-x-2">
+          {[...Array(props.stars).keys()].map((i) => {
+            return <StarIcon key={i} className="text-dandelion w-8 h-8" />;
+          })}
+        </div>
       </div>
     </div>
   );

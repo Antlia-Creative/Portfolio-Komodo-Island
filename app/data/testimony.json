@@ -1,5 +1,13 @@
 [
   {
+    "img_src": "/testimony-3.png",
+    "people_name": "Alfarizi",
+    "people_location": "Oslo, FIN",
+    "short_description": "An amazing adventure from start to finish",
+    "description": "The pristine beaches, vibrant coral reefs, and wildlife encounters were beyond words A must-do for nature lovers!",
+    "stars": 5
+  },
+  {
     "img_src": "/testimony-1.png",
     "people_name": "Dhimas R",
     "people_location": "Surakarta, ID",
@@ -21,6 +29,14 @@
     "people_location": "Oslo, FIN",
     "short_description": "An amazing adventure from start to finish",
     "description": "The pristine beaches, vibrant coral reefs, and wildlife encounters were beyond words A must-do for nature lovers!",
+    "stars": 5
+  },
+  {
+    "img_src": "/testimony-1.png",
+    "people_name": "Dhimas R",
+    "people_location": "Surakarta, ID",
+    "short_description": "Unforgettable experience!",
+    "description": "The guides were knowledgeable and the landscapes were simply breathtaking. Every dive felt like a journey into another world. Highly recommend!",
     "stars": 5
   }
 ]

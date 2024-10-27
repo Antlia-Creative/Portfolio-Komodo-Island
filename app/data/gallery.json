@@ -1,5 +1,10 @@
 [
   {
+    "img_src": "/komodo-gallery1-3.png",
+    "title": "Pink Beach",
+    "description": "A rare pink-hued beach that blends crystal waters and serene beauty for a truly magical escape."
+  },
+  {
     "img_src": "/komodo-gallery1-1.png",
     "title": "Komodo Island",
     "description": "Where ancient dragons roam that invites you to explore rugged landscapes and vibrant reefs in a wild paradise."
@@ -13,5 +18,10 @@
     "img_src": "/komodo-gallery1-3.png",
     "title": "Pink Beach",
     "description": "A rare pink-hued beach that blends crystal waters and serene beauty for a truly magical escape."
+  },
+  {
+    "img_src": "/komodo-gallery1-1.png",
+    "title": "Komodo Island",
+    "description": "Where ancient dragons roam that invites you to explore rugged landscapes and vibrant reefs in a wild paradise."
   }
 ]
