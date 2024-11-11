@@ -79,13 +79,12 @@ export default function Gallery() {
       <div className="mt-20 overflow-hidden aspect-[18/7]">
         <div
           onTransitionEnd={onTransitionEnd}
-          className={`flex items-center px-4 w-[160%] ${
-            isAnimateTo === "no"
-              ? "-translate-x-[18.6%]"
-              : isAnimateTo === "next"
+          className={`flex items-center px-4 w-[160%] ${isAnimateTo === "no"
+            ? "-translate-x-[18.6%]"
+            : isAnimateTo === "next"
               ? "transition-transform duration-300 -translate-x-[37.9%]"
               : "transition-transform duration-300 translate-x-[0.65%]"
-          }`}
+            }`}
         >
           <Card
             imgSrc={data[index[0]].img_src}
@@ -124,15 +123,28 @@ export default function Gallery() {
           />
         </div>
       </div>
-      <div className="mt-8 flex justify-center gap-x-4">
+      <div className="mt-8 flex items-center justify-center gap-x-4">
+        <button
+          type="button"
+          onClick={back}
+          className="block font-bold text-3xl text-viridian-green"
+        >
+          {"<"}
+        </button>
         {data.map((_, idx) => (
           <div
             key={idx}
-            className={`w-3 h-3 rounded-full ${
-              idx === index[2] ? "bg-bright-turquoise" : "bg-silver-foil"
-            }`}
+            className={`w-3 h-3 rounded-full ${idx === index[2] ? "bg-bright-turquoise" : "bg-silver-foil"
+              }`}
           />
         ))}
+        <button
+          type="button"
+          onClick={next}
+          className="block font-bold text-3xl text-viridian-green"
+        >
+          {">"}
+        </button>
       </div>
     </div>
   );
@@ -151,32 +163,27 @@ function Card(props: CardProps) {
   return (
     <div
       onTransitionEnd={(e) => e.stopPropagation()}
-      className={`px-4 ${
-        props.isAnimate ? "transition-all duration-300" : ""
-      } ${props.center ? "flex-[1.125_1.125_0%]" : "flex-1"}`}
+      className={`px-4 ${props.isAnimate ? "transition-all duration-300" : ""
+        } ${props.center ? "flex-[1.125_1.125_0%]" : "flex-1"}`}
     >
       <div onClick={props.onClick} className="px-7">
         <div className="bg-white rounded-3xl overflow-hidden">
           <img
             src={props.imgSrc}
-            className={`w-full ${
-              props.isAnimate ? "transition-all duration-300" : ""
-            } ${props.center ? "aspect-[440/400]" : "aspect-[400/343]"}`}
+            className={`w-full ${props.isAnimate ? "transition-all duration-300" : ""
+              } ${props.center ? "aspect-[440/400]" : "aspect-[400/343]"}`}
           />
           <div className="pt-4 px-8 pb-6">
             <p
-              className={`font-[family-name:var(--font-inter-semi-bold)] ${
-                props.isAnimate ? "transition-all duration-300" : ""
-              } ${props.center ? "text-xl" : "text-base"}`}
+              className={`font-[family-name:var(--font-inter-semi-bold)] ${props.isAnimate ? "transition-all duration-300" : ""
+                } ${props.center ? "text-xl" : "text-base"}`}
             >
               {props.title}
             </p>
             <p
-              className={`${
-                props.isAnimate ? "transition-all duration-300" : ""
-              } ${
-                props.center ? "mt-4" : "mt-2"
-              } text-sm font-[family-name:var(--font-inter)] line-clamp-3`}
+              className={`${props.isAnimate ? "transition-all duration-300" : ""
+                } ${props.center ? "mt-4" : "mt-2"
+                } text-sm font-[family-name:var(--font-inter)] line-clamp-3`}
             >
               {props.description}
             </p>
